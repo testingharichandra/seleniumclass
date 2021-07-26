@@ -9,20 +9,18 @@ public class Facebook {
 		System.setProperty("webdriver.chrome.driver", "./Software/chromedriver.exe");
 		WebDriver driver =new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.facebook.com/");
-		WebElement search=driver.findElement(By.id("email"));
+		driver.get("https://en-gb.facebook.com/");
+		WebElement search=driver.findElement(By.xpath("//input[@aria-label='Email address or phone number']"));
 		search.sendKeys("8928530581");
-		WebElement pass=driver.findElement(By.id("pass"));
-		pass.sendKeys("Samarth");
-		WebElement login=driver.findElement(By.name("login"));
+		WebElement pass=driver.findElement(By.xpath("//input[@aria-label='Password']"));
+		pass.sendKeys("Samaghdtrth");
+		WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
        login.click();
        
-
-       WebElement srch=driver.findElement(By.name("global_typeahead"));
-       srch.sendKeys("kalpak jaiswal");
-    		   
-    	WebElement kalpak=driver.findElement(By.className("j83agx80 cbu4d94t ew0dbk1b irj2b8pg"));
-    	kalpak.click();
+       driver.navigate().to("https://amazon.in");
+       
+       driver.close();
+       
     			
     	
 	}
