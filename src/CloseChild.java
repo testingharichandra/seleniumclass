@@ -9,6 +9,7 @@ public class CloseChild {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.naukri.com");
+		
 		Set<String> wins=driver.getWindowHandles();
 		System.out.println(wins.getClass());
 		String parent =driver.getWindowHandle();

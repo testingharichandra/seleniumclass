@@ -3,15 +3,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FacebookForget {
+public class TitleWithoutGetTitle {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver","./Software/chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver", "./Software/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
+		
 		driver.get("https://en-gb.facebook.com/");
-	driver.findElement(By.partialLinkText("Forgotton"))n.click();
-
+ 
+	WebElement title = driver.findElement(By.xpath("id=\"pageTitle"));
+	System.out.println(title.getAttribute("title"));
+		driver.close();
 	}
 
 }

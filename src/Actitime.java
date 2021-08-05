@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,10 +12,11 @@ public class Actitime {
 	WebDriver driver=new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("https://demo.actitime.com/login.do");
-	WebElement username=driver.findElement(By.id("username"));
-	username.sendKeys("admin");
-	WebElement pass=driver.findElement(By.name("pwd"));
-	pass.sendKeys("manager");
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.findElement(By.id("username")).sendKeys("admin");
+	
+	driver.findElement(By.name("pwd")).sendKeys("manager");
+
 	WebElement login=driver.findElement(By.id("loginButton"));
 	login.click();
      String title=driver.getTitle();
